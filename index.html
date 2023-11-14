@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Outfit:wght@100;500&display=swap"
+        rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100.5%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+
+        .full-screen-container {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            /* Set your desired background color */
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .table-heading .table-box {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .main-content {
+            padding: 30px;
+            padding-right: 0px;
+        }
+
+        .bg-image {
+            background-image: url('https://marketplace.canva.com/EAE-Ny5iqvM/1/0/1600w/canva-green-and-white-the-best-hospital-service-facebook-post-iG5cA3CbsXE.jpg');
+            background-size: cover;
+            width: 100%;
+            height: 65vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+
+        }
+
+        .token-box {
+            margin-top: 20px;
+            perspective: 1000px;
+
+        }
+
+        .full-screen-container .token-box .table-heading>div {
+            background-color: #2f7c94 !important;
+            border: none !important;
+            color: #ffffff !important;
+            border-radius: 10px;
+            min-height: 6rem;
+            max-height: 6rem;
+            font-size: 1.5rem !important;
+            font-weight: 500 !important;
+        }
+
+        .token-box .card {
+            min-height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+            background-color: rgb(245 213 127) !important;
+            color: #000000 !important;
+            font-size: 2.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
+            transform-style: preserve-3d;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, .3);
+        }
+
+
+
+        .moving-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .moving-text .latest-news {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #40a6c6;
+            color: #ffffff;
+            font-size: 20px;
+            height: 77px;
+        }
+
+        .moving-text .marquee-text {
+            background-color: #4BB5D8;
+            color: #ffffff;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-logo {
+            display: none !important;
+        }
+
+        /* 
+        @media (min-width: 1200px) {
+            .custom-padding-xl {
+                padding-left: 80px;
+      
+            }
+        }
+        */
+        .current-token {
+            margin-top: 25px;
+            width: 100%;
+            height: 16vh;
+
+        }
+
+        .video-class {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width:700px) {
+
+            body,
+            html {
+                width: 100% !important;
+                height: auto !important;
+                overflow-y: scroll;
+            }
+
+            .full-screen-container .mobile-logo {
+                display: flex !important;
+            }
+
+            .new-marque {
+                display: none;
+            }
+
+            .counter-padding {
+                padding: 0 !important;
+            }
+
+            .video-class {
+                display: none !important;
+            }
+
+            .main-content {
+                padding: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .current-token {
+                display: none;
+            }
+
+            .row {
+                margin-left: 0px;
+            }
+
+            .full-screen-container .token-box .table-heading>div {
+                background-color: #2f7c94 !important;
+                border: none !important;
+                color: #ffffff !important;
+                border-radius: 2px;
+                min-height: 3rem !important;
+                max-height: 3rem;
+                font-size: 1rem !important;
+                font-weight: 500 !important;
+            }
+
+            .token-box .card {
+                min-height: 3rem !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 4px;
+                background-color: rgb(245 213 127) !important;
+                color: #000000 !important;
+                font-size: 1.1rem !important;
+                font-weight: 700;
+                border-radius: -10px;
+                font-family: 'Josefin Sans', sans-serif;
+                font-family: 'Outfit', sans-serif;
+                transform-style: preserve-3d;
+                /* box-shadow: 5px 5px 15px rgba(0, 0, 0, .3); */
+            }
+
+            .mobile-logo {
+                height: 3rem !important;
+            }
+
+            .token-box {
+                margin-top: 2px;
+            }
+        }
+
+
+
+        @media (max-height:1200px) {
+            .video-class {
+                max-height: 65%;
+            }
+        }
+
+        @media (max-height:1100px) {
+            .video-class {
+                max-height: 72%;
+            }
+        }
+
+        @media (max-height:1000px) {
+            .video-class {
+                max-height: 63%;
+            }
+        }
+
+        @media (max-height:900px) {
+            .video-class {
+                max-height: 62%;
+            }
+        }
+
+        @media (max-height:862px) {
+            .video-class {
+                max-height: 58%;
+            }
+        }
+
+        @media (max-height:830px) {
+            .video-class {
+                max-height: 53%;
+            }
+        }
+
+        @media (max-height:780px) {
+            .video-class {
+                max-height: 50%;
+            }
+        }
+
+        @media (max-height:730px) {
+            .video-class {
+                max-height: 48%;
+            }
+
+            .bg-image {
+                height: 61vh;
+            }
+        }
+
+        @media (max-height:700px) {
+            .video-class {
+                max-height: 44%;
+            }
+
+        }
+
+        @media (max-height:680px) {
+            .video-class {
+                max-height: 40%;
+            }
+        }
+
+        @media (max-height:640px) {
+            .video-class {
+                max-height: 36%;
+            }
+        }
+
+        @media (max-height:600px) {
+            .video-class {
+                max-height: 32%;
+            }
+        }
+
+        @media (max-height:640px) {
+            .video-class {
+                max-height: 20%;
+            }
+
+            .bg-image {
+                height: 58vh;
+            }
+        }
+
+        @media (max-height:600px) {
+
+            .bg-image {
+                height: 54vh;
+            }
+        }
+
+        /* @media (min-width:1500px) { 
+            .video-class {
+                max-height: 60%;
+            } */
+
+        /* } */
+        @media (max-width:1200px) {
+            .latest-news {
+                display: none;
+            }
+
+            .counter-padding {
+                padding: 0 !important;
+            }
+        }
+
+        #my-video {
+            padding-left: 20px;
+            padding-top: 25px;
+        }
+
+        .card-animation {
+            animation: scaleUp 0.5s ease-in-out;
+        }
+
+        .logo-section {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .next-token {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #4bb5d8;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        .next-token .next-counter h1 {
+            font-size: 4rem;
+        }
+
+        .next-token .next-counter h5 {
+            font-size: 1.6rem;
+        }
+
+        .next-token .border-next {
+            border-right: 5px solid white;
+
+        }
+
+        .current-token .counter-padding {
+            animation: circleScale 2.5s infinite ease;
+        }
+
+        .logo-section .logo-image {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_8cO4bPJNvJjJKKBjfBiOmRNLeYcKShXLghW8PZTA-Q9f2vDUssZ5wn9he13tSI0BSd0&usqp=CAU');
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .mobile-logo {
+            width: 100%;
+            height: 5rem;
+            background-color: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-logo .logo-image {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('data:image/png;base64,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');
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes circleScale {
+            0% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(0.9)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+    </style>
+    <title>Full Screen Example</title>
+</head>
+
+<body>
+
+    <div class="full-screen-container text-danger row position-relative ">
+        <div class="mobile-logo">
+            <div class="logo-image"></div>
+        </div>
+
+        <div
+            class="col-lg-6 col-xl-8 col-md-6   main-content  col-12 d-flex flex-column align-items-start justify-content-start ">
+            <!-- <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item ">
+                        <div class="bg-image  d-none d-md-block">
+
+                        </div>
+                    </div> 
+                    <div class="carousel-item active">
+                        <div class="bg-image  d-none d-md-block">
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="bg-image  d-none d-md-block">
+
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> -->
+
+            <div class="video-class">
+                <video id="my-video" class="video-js vjs-theme-fantasy" autoplay controls muted preload="auto"
+                    width="100%" height="100%" poster="https://wallpapercave.com/wp/wp3305861.jpg" data-setup="{}">
+                    <source src="./production_id_4460336.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="current-token row p-0 m-0 mt-4 ">
+                <div class="col-xl-3 col-lg-4 col-md-12 d-none d-lg-block p-0 me-3">
+                    <div class=" logo-section  d-none d-md-block">
+                        <div class="logo-image"></div>
+                    </div>
+
+                </div>
+                <div class="col-xl-9 col-lg-8 col-md-12 pr-0 mr-0 pl-2  ml-0 counter-padding   d-none d-md-block">
+
+                    <div class="row m-0 p-0 card next-token flex-row flex-fill ">
+                        <div
+                            class="col-6 d-flex align-items-center justify-content-center flex-column next-counter border-next">
+                            <h5 class="text-light m-0 p-0">COUNTER</h5>
+                            <h1 class="text-light fw-bold ">A01</h1>
+                        </div>
+                        <div class="col-6  d-flex align-items-center justify-content-center flex-column next-counter">
+                            <h5 class="text-light m-0 p-0">TOKEN</h5>
+                            <h1 class="text-light fw-bold">0023</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6  col-xl-4 col-md-6 col-12 pe-0 me-0 token-box custom-padding-xl">
+            <div class="col-12  row p-0 m-0 ">
+                <div class="col-md-6 col-6 m-0 p-0 table-heading">
+                    <div class=" border bg-light card m-1 text-center">COUNTER </div>
+                </div>
+                <div class="col-md-6 col-6  m-0 p-0 table-heading">
+                    <div class=" border bg-light card m-1 text-center">TOKEN </div>
+                </div>
+                <div id="counterValue" class="col-md-6 col-6 m-0 p-0">
+                </div>
+                <div id="tokenValue" class="col-md-6  col-6 m-0 p-0">
+                </div>
+            </div>
+
+        </div>
+        <div class="position-absolute moving-text new-marque row">
+            <div class="latest-news col-md-2 col-4">Latest News</div>
+            <div class="marquee-text col-md-10 col-8">
+                <marquee direction="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+                    expedita omnis similique nobis id! Eum necessitatibus id, maxime ipsam minus quo culpa quas qui,
+                    quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus enim nemo expedita corporis,
+                    rerum libero omnis similique recusandae? Repellat enim eum atque ea laboriosam neque expedita qui
+                    error deserunt ipsam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic repellendus
+                    cupiditate blanditiis, laborum non ea! Officia voluptatum ea omnis consequatur nemo nesciunt nihil
+                    sint dolorum. Temporibus quaerat maiores quibusdam eum.
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var myVideo = document.getElementById('my-video');
+
+        // Listen for the "ended" event
+        myVideo.addEventListener('ended', function () {
+            // Reset the playback to the beginning
+            myVideo.currentTime = 0;
+            myVideo.play(); // Start playing again
+        });
+    });
+</script>
+<script>
+    const myArray = [
+        {
+            count: '002',
+            token: '0002'
+        },
+        {
+            count: '003',
+            token: '04502'
+        },
+        {
+            count: '005',
+            token: '03402'
+        },
+        {
+            count: '007',
+            token: '04302'
+        },
+        {
+            count: '008',
+            token: '0322'
+        },
+        {
+            count: '009',
+            token: '04402'
+        },
+        {
+            count: '009',
+            token: '04402'
+        },
+        {
+            count: '009',
+            token: '04402'
+        },
+        {
+            count: '009',
+            token: '04402'
+        },
+    ]
+    let currentIndex = 0;
+
+    function renderData(myArray) {
+        const counterValueContainer = document.getElementById("counterValue");
+        const tokenValueContainer = document.getElementById("tokenValue");
+
+        // Clear previous content
+        counterValueContainer.innerHTML = '';
+        tokenValueContainer.innerHTML = '';
+
+        myArray.forEach((item, index) => {
+            const counterValueElement = document.createElement("div");
+            const tokenValueElement = document.createElement("div");
+
+            const rotationClass = index === currentIndex ? ' card-animation' : '';
+
+            counterValueElement.className = 'border bg-light card m-1 text-center class-' + index + rotationClass;
+            tokenValueElement.className = 'border bg-light card m-1 text-center class-' + index + rotationClass;
+
+            counterValueElement.textContent = item.count;
+            tokenValueElement.textContent = item.token;
+
+            counterValueContainer.appendChild(counterValueElement);
+            tokenValueContainer.appendChild(tokenValueElement);
+        });
+
+        // Update current index for the next rotation
+
+    }
+
+    function rotateArrayRight(arr, positions) {
+        for (let i = 0; i < positions; i++) {
+            const lastElement = arr.pop();
+            arr.unshift(lastElement);
+        }
+    }
+
+    function printAndRotate() {
+        rotateArrayRight(myArray, 1);
+        renderData(myArray);
+    }
+
+    // Initial rendering
+    renderData(myArray);
+    // Set interval for rotation
+     setInterval(printAndRotate, 10000);
+</script>
+
+</html>
